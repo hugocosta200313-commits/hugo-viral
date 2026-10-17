@@ -1,4 +1,4 @@
-# Analisador de gancho — skill grátis para Claude Code
+# Hugo Viral — skill grátis para Claude Code
 
 Analisa um Reels, Short ou TikTok **pronto** e diz:
 
@@ -20,10 +20,10 @@ transcrição para julgar conteúdo e visual. Sem API paga, sem créditos, sem e
 
 1. Tenha `ffmpeg` no PATH e Python 3.9+.
 2. `pip install numpy faster-whisper`
-3. Copie esta pasta para `~/.claude/skills/analisador-gancho/`:
+3. Copie esta pasta para `~/.claude/skills/hugo-viral/`:
 
 ```bash
-git clone https://github.com/hugocosta200313-commits/analisador-gancho ~/.claude/skills/analisador-gancho
+git clone https://github.com/hugocosta200313-commits/hugo-viral ~/.claude/skills/hugo-viral
 ```
 
 ## Usar
@@ -37,7 +37,7 @@ No Claude Code, é só pedir:
 Ou rode só a medição:
 
 ```bash
-python scripts/analisar_gancho.py video.mp4 --saida analise_gancho
+python scripts/hugo_viral.py video.mp4 --saida hugo_viral
 ```
 
 Sai um `video.html` com a nota de forma, a curva de estímulo (gancho, cortes e trechos planos marcados), as

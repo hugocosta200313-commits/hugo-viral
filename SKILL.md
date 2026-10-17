@@ -1,9 +1,9 @@
 ---
-name: analisador-gancho
+name: hugo-viral
 description: Analisa um vídeo curto pronto (Reels, Shorts, TikTok) e diz se o conteúdo está bom, qual a chance de viralizar e exatamente como melhorar — gancho, ritmo, silêncios, trechos planos, efeitos visuais, texto na tela, zonas seguras e cor — com sugestões por minutagem (só cortar, ajustar efeito, adicionar ou regravar). Mede a forma de graça, no próprio computador (ffmpeg + faster-whisper), e faz a análise visual pelos quadros-chave. Compara várias aberturas do mesmo vídeo. Use quando o usuário perguntar "esse vídeo vai viralizar?", "analisa meu reels", "o gancho está bom?", "como melhorar esse vídeo", "os efeitos estão bons?", "qual abertura é melhor", ou mandar um vídeo pronto pedindo opinião.
 ---
 
-# Analisador de gancho
+# Hugo Viral
 
 Alternativa gratuita e local aos "preditores de viralidade". O script **mede** a forma do vídeo; você (o agente)
 **olha** os quadros-chave e **lê** a transcrição para julgar conteúdo e visual. A resposta final junta os dois.
@@ -19,7 +19,7 @@ Alternativa gratuita e local aos "preditores de viralidade". O script **mede** a
 ## Passo 1 — Medir
 
 ```bash
-python <pasta-da-skill>/scripts/analisar_gancho.py VIDEO.mp4 --saida analise_gancho
+python <pasta-da-skill>/scripts/hugo_viral.py VIDEO.mp4 --saida hugo_viral
 ```
 
 - Várias aberturas do mesmo vídeo: passe todos os arquivos de uma vez; sai também `comparativo.html` e um ranking.

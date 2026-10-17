@@ -15,7 +15,7 @@ import sys
 import tempfile
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
-SCRIPT = os.path.join(AQUI, "..", "scripts", "analisar_gancho.py")
+SCRIPT = os.path.join(AQUI, "..", "scripts", "hugo_viral.py")
 VID = "-c:v libx264 -pix_fmt yuv420p -r 30 -c:a aac -ar 48000 -ac 1 -shortest".split()
 
 

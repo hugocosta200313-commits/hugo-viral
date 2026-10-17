@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Analisador de gancho e retenção para vídeos curtos (Reels, Shorts, TikTok).
+"""Hugo Viral: analisador de gancho e retenção para vídeos curtos (Reels, Shorts, TikTok).
 
 Mede a FORMA do vídeo de graça, no próprio computador (ffmpeg + faster-whisper):
 quando a fala começa, quantas palavras entram no gancho, cortes, movimento,
@@ -7,7 +7,7 @@ flashes, energia do áudio, trechos planos e uma curva de estímulo. Também tir
 quadros-chave e uma folha de contato para a análise visual feita pelo agente.
 
 Uso:
-    python analisar_gancho.py video.mp4 [outro.mp4 ...] [--saida pasta]
+    python hugo_viral.py video.mp4 [outro.mp4 ...] [--saida pasta]
                               [--modelo small] [--sem-transcricao]
 
 Com vários vídeos, gera também um comparativo (útil para testar aberturas).
@@ -436,7 +436,7 @@ def html_relatorio(r, folha_rel):
     texto = html.escape(g["texto_3s"] or "(sem transcrição)")
     folha = f"<h2>Quadros-chave</h2><img src='{html.escape(folha_rel)}' alt='Folha de contato'>" if folha_rel else ""
     return f"""<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Análise de gancho</title><style>{CSS}</style></head><body><main>
+<title>Hugo Viral</title><style>{CSS}</style></head><body><main>
 <h1>{html.escape(os.path.basename(r['arquivo']))}</h1><div class="muted">{r['duracao_s']}s · {r['resolucao']}</div>
 <div class="card"><div class="nota">{r['nota_forma']}<span class="muted" style="font-size:20px">/100</span></div>
 <div class="muted">Nota de forma (medições). Não avalia se a ideia é boa.</div></div>
@@ -467,7 +467,7 @@ def main():
         pass
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("videos", nargs="+")
-    ap.add_argument("--saida", default="analise_gancho")
+    ap.add_argument("--saida", default="hugo_viral")
     ap.add_argument("--modelo", default="small", help="modelo do faster-whisper (tiny, base, small, medium)")
     ap.add_argument("--sem-transcricao", action="store_true", help="detecta fala só pela energia do áudio")
     ap.add_argument("--max-segundos", type=float, default=180.0, help="analisa no máximo estes segundos")
